@@ -2,7 +2,7 @@
 name = "pdoc_sample"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <sy.oh@xiilab.com>"]
+authors = ["SooYeon5 <sy.oh@xiilab.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
