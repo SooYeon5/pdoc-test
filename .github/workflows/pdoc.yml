@@ -33,7 +33,7 @@ jobs:
 
       # pdoc run 
       - name: Pdoc
-        run: pdoc --html -o docs --force main.py
+        run: pdoc -o ./html pdoc
       
       # deploy
       - name: Deploy
