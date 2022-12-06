@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pdoc_sample"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+mypy = "^0.930"
+flake8 = "^4.0.1"
+pdoc3 = "^0.10.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
