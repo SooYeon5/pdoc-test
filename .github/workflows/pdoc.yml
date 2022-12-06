@@ -35,14 +35,9 @@ jobs:
       - name: Pdoc
         run: pdoc --html -o docs --force main.py
       
-      # ref: https://zenn.dev/lollipop_onl/articles/eoz-gha-push-diffs
-      - name: Push new docs
-        run: |
-          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
-          git config --global user.name "${GITHUB_ACTOR}"
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          if (git diff --shortstat | grep '[0-9]'); then \
-            git add .; \
-            git commit -m "Generating docs via GitHub Actions"; \
-            git push origin HEAD:${GITHUB_REF}; \
-          fi
+      # deploy
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
