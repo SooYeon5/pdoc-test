@@ -38,7 +38,8 @@ jobs:
       # install prod dependencies
       - name: Install Dependencies
         run: |
-          poetry install --no-interaction --no-dev
+          # poetry install --no-interaction --no-dev
+          poetry install 
           
 
       # pdoc
