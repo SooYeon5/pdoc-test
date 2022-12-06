@@ -26,24 +26,14 @@ jobs:
         with:
           python-version: 3.8
         
-      # install poetry
-      - name: Install Poetry
-        run: |
-          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-          # pip install --user poetry
-      
-      - name: Add path for Poetry
-        run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
-      
-      # install prod dependencies
-      - name: Install Dependencies
-        run: |
-          poetry install
+      # install pdoc
+      - name: Install Pdoc
+        run: pip install pdoc
           
 
-      # pdoc
+      # pdoc run 
       - name: Pdoc
-        run: poetry run pdoc --html -o docs --force main.py
+        run: pdoc --html -o docs --force main.py
       
       # ref: https://zenn.dev/lollipop_onl/articles/eoz-gha-push-diffs
       - name: Push new docs
